@@ -11,6 +11,9 @@ client = MongoClient(MONGO_URI)
 db = client.todo_db
 tasks_collection = db.tasks
 
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
 
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
